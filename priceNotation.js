@@ -21,18 +21,18 @@ $(wrapperSelector).each(function()
         .text( 
             $placeholder1
                 .text()
-                .replace(/x.xx/g, price1)
+                .replace(/x.xx/g, price1.toFixed(2))
         )
     $placeholder2
         .text( 
             $placeholder2
                 .text()
-                .replace(/x.xx/g, price2)
+                .replace(/x.xx/g, price2.toFixed(2))
         )
 
     if ( price1 >= price2 )
     {
-        let text = $placeholder1.text().replace(/x.xx/g, price1)
+        let text = $placeholder1.text().replace(/x.xx/g, price1.toFixed(2))
         $(this).text( text )
     }
 })
