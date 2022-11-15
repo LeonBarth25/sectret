@@ -11,8 +11,8 @@ const wrapperSelector = '[bmg_price-notation = "wrapper"]',
 $(wrapperSelector).each(function()
 {
     // Local elements & variables
-    let price1 = parseInt( $(this).find(price1Selector).text() ),
-        price2 = parseInt( $(this).find(price2Selector).text() ),
+    let price1 = $(this).find(price1Selector).text(),
+        price2 = $(this).find(price2Selector).text(),
         $placeholder1 = $(this).find(placeholder1Selector),
         $placeholder2 = $(this).find(placeholder2Selector)
 
@@ -21,18 +21,18 @@ $(wrapperSelector).each(function()
         .text( 
             $placeholder1
                 .text()
-                .replace(/x.xx/g, price1.toFixed(2))
+                .replace(/x.xx/g, price1)
         )
     $placeholder2
         .text( 
             $placeholder2
                 .text()
-                .replace(/x.xx/g, price2.toFixed(2))
+                .replace(/x.xx/g, price2)
         )
 
-    if ( price1 >= price2 )
+    if (  parseInt( price1 ) >=  parseInt( price2 ) )
     {
-        let text = $placeholder1.text().replace(/x.xx/g, price1.toFixed(2))
+        let text = $placeholder1.text().replace(/x.xx/g, price1)
         $(this).text( text )
     }
 })
