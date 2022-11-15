@@ -6,7 +6,7 @@ const $AA = $('.a-capital-wrap'),
     textArray = [ $('.grenadine'), $('.arboria') ]
 
 // Main function
-$AA.add( $Aa ).each(function(index)
+if ( $(window).width() >= 767 ) { $AA.add( $Aa ).each(function(index)
 {
     // Local elements
     let $theseBigLetters = $(this),
@@ -23,18 +23,18 @@ $AA.add( $Aa ).each(function(index)
     
     $theseBigLetters.click(() => 
     {
-        if ( clickCounter == 0 )
+        if ( clickCounter == 1 )
         {
             clickCounter++
             gsap.to([$theseBigLetters[0], $thisRevealText[0]], { opacity: 1, duration: .35 })
         }
-        else if ( clickCounter == 1 )
+        else if ( clickCounter == 2 )
         {
             clickCounter--
             gsap.to($theseBigLetters[0], { opacity: .55, duration: .35 })
             gsap.to($thisRevealText[0], { opacity: 0, duration: .35 })
         }
     })
-})
+}) }
 
 })() /* End of: BMG AA Aa script */
