@@ -1,4 +1,4 @@
-/* Start of: Custom Slider Mouse Arrow */
+(() => { /* Start of: Custom Slider Mouse Arrow */
 
 // Elements & strings
 const $slider = $('#home-slider'),
@@ -44,4 +44,4 @@ function getRotationDegrees(obj) {
     return (angle < 0) ? angle + 360 : angle;
 }
 
-/* End of: Custom Slider Mouse Arrow */
+})() /* End of: Custom Slider Mouse Arrow */
