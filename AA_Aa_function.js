@@ -3,10 +3,11 @@
 // Global elements
 const $AA = $('.a-capital-wrap'),
     $Aa = $('.a-lower-wrap'),
-    textArray = [ $('.grenadine'), $('.arboria') ]
+    textArray = [ $('.grenadine'), $('.arboria') ],
+    $tapText = $('.text.is--white.is--happy-cow')
 
 // Main function
-if ( $(window).width() >= 767 ) { $AA.add( $Aa ).each(function(index)
+if ( $(window).width() <= 767 ) { $AA.add( $Aa ).each(function(index)
 {
     // Local elements
     let $theseBigLetters = $(this),
@@ -19,6 +20,7 @@ if ( $(window).width() >= 767 ) { $AA.add( $Aa ).each(function(index)
     }, () =>
     {
         clickCounter = 0
+        gsap.to( $tapText[0], { opacity: .55, duration: .35 })
     })
     
     $theseBigLetters.click(() => 
@@ -27,11 +29,12 @@ if ( $(window).width() >= 767 ) { $AA.add( $Aa ).each(function(index)
         {
             clickCounter++
             gsap.to([$theseBigLetters[0], $thisRevealText[0]], { opacity: 1, duration: .35 })
+            gsap.to($tapText[0], { opacity: 0, duration: .35 })
         }
         else if ( clickCounter == 2 )
         {
             clickCounter--
-            gsap.to($theseBigLetters[0], { opacity: .55, duration: .35 })
+            gsap.to([ $theseBigLetters[0], $tapText[0] ], { opacity: .55, duration: .35 })
             gsap.to($thisRevealText[0], { opacity: 0, duration: .35 })
         }
     })
