@@ -1,5 +1,3 @@
-
-﻿
 (() => { /* Start of: BMG big & small logo script */
 
 // Global elements
