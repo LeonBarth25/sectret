@@ -1,7 +1,5 @@
 (() => { /* Start of: BMG - IL Granito Button Code */
 
-$('#w-node-_67f3a354-872a-28bf-f546-273d4265dbba-01a8b4b5').remove()
-
 // Global strings & elements
 const button1Selector = '.next-button-type.w-button',
     form1Selector = '#type-form',
