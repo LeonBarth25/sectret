@@ -1,5 +1,4 @@
 (() => {
-    $("#w-node-_67f3a354-872a-28bf-f546-273d4265dbba-01a8b4b5").remove();
     let t = ".w-radio",
         e = $('[bmg-element = "slide"]'),
         n = e.length - 1;
