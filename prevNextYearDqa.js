@@ -30,7 +30,7 @@
     let currentSlideIndex = getCurrentSlide();
 
     // Logic
-    if (currentSlideIndex == 2) {
+    if (currentSlideIndex == 2 || $dynList.length == 1) {
       // Previous year logic
       yearsObj.prev ? (window.location.href = yearsObj.prev) : undefined;
     }
